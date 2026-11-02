@@ -21,7 +21,7 @@ clignotement dû aux erreurs de détection ponctuelles.
 
 ## Matériel
 - Arduino Uno
-- 5 LED + 5 résistances de 220 Ω
+- 5 LED + 5 résistances de 330 Ω
 - Breadboard et fils
 - Webcam (celle du PC)
 
