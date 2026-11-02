@@ -56,6 +56,11 @@ Quitter : touche Échap sur la fenêtre de la caméra.
 - Le moniteur série ajoute une fin de ligne qui était lue comme un nombre
   négatif : le code Arduino ignore désormais tout caractère hors `0` à `5`
 - L'ouverture du port série redémarre l'Arduino : pause de 2 s nécessaire
+- Erreur `could not open port 'COM3'` : câble USB mal branché ou port série
+  différent (commande `python -m serial.tools.list_ports` pour le retrouver),
+  ou moniteur série de l'Arduino IDE resté ouvert
+- Erreur `No module named 'cv2'` : environnement virtuel non activé dans le
+  terminal (il faut voir `(venv)` avant de lancer le script)
 
 ## Pistes d'amélioration
 - Commande d'un servo par l'ouverture de la main
