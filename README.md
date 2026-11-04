@@ -19,6 +19,15 @@ envoie ce nombre à une carte Arduino Uno, qui allume autant de LED.
 Un filtre de stabilité (5 images identiques consécutives) évite le
 clignotement dû aux erreurs de détection ponctuelles.
 
+## Comportement
+
+| Doigts levés | Résultat |
+|---|---|
+| 0 (ou pas de main) | Toutes les LED éteintes |
+| 1 à 4 | Autant de LED allumées, **de la droite vers la gauche** |
+| 5 | Toutes les LED **clignotent**  |
+
+Le clignotement s'arrête dès que la main change de position.
 ## Matériel
 - Arduino Uno
 - 5 LED + 5 résistances de 330 Ω
@@ -26,7 +35,8 @@ clignotement dû aux erreurs de détection ponctuelles.
 - Webcam (celle du PC)
 
 ## Câblage
-LED 1 à 5 sur les broches  4, 6, 8, 10, 12. Chaque LED : broche → patte longue (+),
+Les LED sont branchées sur les broches 12, 10, 8, 6 et 4 (dans cet ordre,
+de droite à gauche sur mon montage). Chaque LED : broche → patte longue (+),
 patte courte (−) → résistance 330 Ω → GND.
 
 <img src="docs/montage.jpg" alt="Montage Arduino avec 5 LED" width="700">
@@ -61,7 +71,7 @@ Quitter : touche Échap sur la fenêtre de la caméra.
   ou moniteur série de l'Arduino IDE resté ouvert
 - Erreur `No module named 'cv2'` : environnement virtuel non activé dans le
   terminal (il faut voir `(venv)` avant de lancer le script)
-
+- delay() bloquait la lecture de la série pendant le clignotement : remplacé par millis() pour un clignotement non bloquant
 ## Pistes d'amélioration
 - Commande d'un servo par l'ouverture de la main
 - Communication bidirectionnelle (mesures renvoyées vers le PC)
