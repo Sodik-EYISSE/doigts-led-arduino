@@ -71,7 +71,9 @@ Quitter : touche Échap sur la fenêtre de la caméra.
   ou moniteur série de l'Arduino IDE resté ouvert
 - Erreur `No module named 'cv2'` : environnement virtuel non activé dans le
   terminal (il faut voir `(venv)` avant de lancer le script)
-- delay() bloquait la lecture de la série pendant le clignotement : remplacé par millis() pour un clignotement non bloquant
+- `delay()` bloquait la lecture de la série pendant le clignotement : remplacé
+  par `millis()` pour un clignotement non bloquant
+  
 ## Pistes d'amélioration
 - Commande d'un servo par l'ouverture de la main
 - Communication bidirectionnelle (mesures renvoyées vers le PC)
